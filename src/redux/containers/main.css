@@ -1,0 +1,18 @@
+.form__content {
+  width: 430px;
+  min-height: 200px;
+  position: relative;
+  box-sizing: border-box;
+  padding: 34px 36px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.todo-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}

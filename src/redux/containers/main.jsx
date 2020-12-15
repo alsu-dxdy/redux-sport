@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { addTask, removeTask } from '../actions/actionCreator';
 
 import AddTaskForm from '../components/addTaskForm/addTaskForm'
-
+import TableList from './table-list'
 import './main.css';
 
 
@@ -13,12 +13,6 @@ function Main(props) {
   const [inputTypeSport, setinputTypeSport] = useState('');
   const [inputKm, setInputKm] = useState('');
   const [inputComment, setInputComment] = useState('');
-  // const [showData, setShowData] = useState({
-  //     name: '',
-  //     text: '',
-  //     position: '',
-  //     date: '',
-  // });
 
   function handleInputDateChange({ target: { value } }) {
     setInputDate(value);
@@ -50,7 +44,8 @@ function Main(props) {
     setInputKm('');
     setInputComment('');
   }
-
+  const { tasks } = props;
+  const isTasksExist = tasks && tasks.length > 0;
   /* AddTaskForm: название пропса и значение пропса названы одинаково*/
   return (
     <Fragment>
@@ -65,11 +60,11 @@ function Main(props) {
         handleTextAreaChange={handleTextAreaChange}
         handleAdd={handleAdd}
       />
+      {isTasksExist && <TableList tasksList={tasks} />}
     </Fragment>
   )
 }
 
-//export default Main;
 export default connect(state => ({
   tasks: state.tasks,
   //filters: state.filters,

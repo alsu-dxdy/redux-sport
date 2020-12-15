@@ -60,7 +60,13 @@ function Main(props) {
         handleTextAreaChange={handleTextAreaChange}
         handleAdd={handleAdd}
       />
-      {isTasksExist && <TableList tasksList={tasks} />}
+      <div>
+        {isTasksExist ? (
+          <TableList tasksList={tasks} />
+        ) : (
+            <h3 className="main__text">Just do it!</h3>
+          )}
+      </div>
     </Fragment>
   )
 }

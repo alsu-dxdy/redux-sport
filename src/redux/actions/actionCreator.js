@@ -1,10 +1,8 @@
 import { ADD_TASK, REMOVE_TASK } from '../../constants';
 
-export const addTast = (id, text, isCompleted) => ({
+export const addTask = (id, date, typeSport, km, comment) => ({
   type: ADD_TASK,
-  id,
-  text,
-  isCompleted
+  id, date, typeSport, km, comment
 });
 
 export const removeTask = (id) => ({

@@ -44,7 +44,7 @@ function Main(props) {
     setInputKm('');
     setInputComment('');
   }
-  const { tasks } = props;
+  const { tasks, removeTask } = props;
   const isTasksExist = tasks && tasks.length > 0;
   /* AddTaskForm: название пропса и значение пропса названы одинаково*/
   return (
@@ -62,7 +62,7 @@ function Main(props) {
       />
       <div>
         {isTasksExist ? (
-          <TableList tasksList={tasks} />
+          <TableList tasksList={tasks} removeTask={removeTask} />
         ) : (
             <h3 className="main__text">Just do it!</h3>
           )}

@@ -14,7 +14,6 @@ const tasks = (state = TASKS, { id, date, typeSport, km, comment, type }) => {
       ];
     case REMOVE_TASK:
       // возвращаем только несовпадения с полученным id
-      console.log(22);
       return [...state].filter(task => task.id !== id);
 
     default:

@@ -2,7 +2,7 @@ import React from 'react';
 
 import './table-list.css';
 
-const TableList = ({ tasksList }) => (
+const TableList = ({ tasksList, removeTask }) => (
     <table className="table-list">
         <thead>
             <tr>
@@ -19,10 +19,11 @@ const TableList = ({ tasksList }) => (
                     <td className="table-list__cell">{typeSport}</td>
                     <td className="table-list__cell">{km}</td>
                     <td className="table-list__cell">{comment}</td>
+                    <td ><i onClick={() => removeTask(id)} className="fas fa-times" /> </td>
                 </tr>
             ))}
         </tbody>
-    </table>
+    </table >
 );
 
 export default TableList;

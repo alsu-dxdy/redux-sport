@@ -5,3 +5,13 @@
 .table-list__cell {
     text-align: center;
 }
+
+.fa-times {
+    transition: all .3s ease;
+    color: rgba(197, 48, 48, 0.678);
+}
+
+.fa-times:before {
+    content: "X";
+    content: "\f00d";
+}

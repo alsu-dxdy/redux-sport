@@ -8,7 +8,7 @@ const TableList = ({ tasksList, removeTask }) => (
             <tr>
                 <th> Date</th>
                 <th> TypeSport</th>
-                <th> Distance, km</th>
+                <th> Distance,<br /> km</th>
                 <th> Comment </th>
             </tr>
         </thead>

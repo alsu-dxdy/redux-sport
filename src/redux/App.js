@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-import Main from './containers/main';
+import Main from './containers/main/main';
 import Title from './components/title/title';
 
 const App = () => (

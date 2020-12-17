@@ -1,10 +1,10 @@
 import React, { useState, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { addTask, removeTask, changeFilter } from '../actions/actionCreator';
+import { addTask, removeTask, changeFilter } from '../../actions/actionCreator';
 
-import AddTaskForm from '../components/addTaskForm/addTaskForm';
-import TableList from './table-list';
-import FilterRow from '../components/filter-row/filter-row'
+import AddTaskForm from '../../components/addTaskForm/addTaskForm';
+import TableList from '../../components/table-list/table-list';
+import FilterRow from '../../components/filter-row/filter-row'
 import './main.css';
 
 

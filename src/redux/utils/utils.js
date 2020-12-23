@@ -18,3 +18,23 @@ export const filterTasks = (tasks, activeFilter) => {
             return tasks;
     }
 }
+
+export const sorterTasks = (tasks, sortBy) => {
+    console.log(tasks[0]);
+    switch (sortBy) {
+        case 'date':
+            console.log(tasks[0].date);
+            return tasks.sort((a, b) => a.date - b.date);
+            break;
+        case 'distance':
+            console.log(tasks[0].km);
+            return tasks.sort((a, b) => a.km - b.km);
+            break;
+        case 'default':
+            return tasks.sort((a, b) => a.id - b.id);
+            break;
+
+        default:
+            return tasks;
+    }
+}

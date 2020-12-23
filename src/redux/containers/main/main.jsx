@@ -1,11 +1,13 @@
 import React, { useState, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { addTask, removeTask, changeFilter } from '../../actions/actionCreator';
+import { addTask, removeTask, changeFilter, changeSorter } from '../../actions/actionCreator';
 
 import AddTaskForm from '../../components/addTaskForm/addTaskForm';
 import TableList from '../../components/table-list/table-list';
-import FilterRow from '../../components/filter-row/filter-row'
-import { filterTasks } from '../../utils/utils';
+import FilterRow from '../../components/filter-row/filter-row';
+import SorterRow from '../../components/sorter-row/sorter-row'
+
+import { filterTasks, sorterTasks } from '../../utils/utils';
 import './main.css';
 
 
@@ -15,6 +17,8 @@ function Main(props) {
   const [inputTypeSport, setinputTypeSport] = useState('');
   const [inputKm, setInputKm] = useState('');
   const [inputComment, setInputComment] = useState('');
+  const [inputDateSort, setInputDateSort] = useState('');
+  const [inputKmSort, setInputKmSort] = useState('');
 
   function handleInputDateChange({ target: { value } }) {
     setInputDate(value);
@@ -47,10 +51,10 @@ function Main(props) {
     setInputComment('');
   }
 
-  const { tasks, removeTask, filters, changeFilter } = props;
+  const { tasks, removeTask, filter, sorter, changeFilter, changeSorter } = props;
   const isTasksExist = tasks && tasks.length > 0;
-  const filteredTasks = filterTasks(tasks, filters);
-
+  const filteredTasks = filterTasks(tasks, filter,);
+  const sorteredTasks = sorterTasks(filteredTasks, sorter);
   /* AddTaskForm: название пропса и значение пропса названы одинаково*/
   return (
     <Fragment>
@@ -66,13 +70,14 @@ function Main(props) {
         handleAdd={handleAdd}
       />
       <div className="main-wrapper">
-        {isTasksExist && <FilterRow activeFilter={filters} changeFilter={changeFilter} />}
+        {isTasksExist && <FilterRow activeFilter={filter} changeFilter={changeFilter} />}
+        {isTasksExist && <SorterRow activeSorter={sorter} changeSorter={changeSorter} />}
+
         {isTasksExist ? (
-          <TableList tasksList={filteredTasks} removeTask={removeTask} />
+          <TableList tasksList={sorteredTasks} removeTask={removeTask} />
         ) : (
             <h3 className="main__text">Just do it!</h3>
           )}
-
       </div>
     </Fragment>
   )
@@ -80,7 +85,8 @@ function Main(props) {
 
 export default connect(state => ({
   tasks: state.tasks,
-  filters: state.filters,
-}), { addTask, removeTask, changeFilter })(Main);
+  filter: state.filter,
+  sorter: state.sorter,
+}), { addTask, removeTask, changeFilter, changeSorter })(Main);
 
 

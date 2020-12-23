@@ -20,11 +20,10 @@ export const filterTasks = (tasks, activeFilter) => {
 }
 
 export const sorterTasks = (tasks, sortBy) => {
-    console.log(tasks[0]);
     switch (sortBy) {
         case 'date':
-            console.log(tasks[0].date);
-            return tasks.sort((a, b) => a.date - b.date);
+            // Date.parse('YYYY-MM-DD') возвращает таймстамп
+            return tasks.sort((a, b) => Date.parse(a.date) - Date.parse(b.date));
             break;
         case 'distance':
             console.log(tasks[0].km);

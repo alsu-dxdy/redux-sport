@@ -26,7 +26,6 @@ export const sorterTasks = (tasks, sortBy) => {
             return tasks.sort((a, b) => Date.parse(a.date) - Date.parse(b.date));
             break;
         case 'distance':
-            console.log(tasks[0].km);
             return tasks.sort((a, b) => a.km - b.km);
             break;
         case 'default':

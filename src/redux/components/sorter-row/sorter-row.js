@@ -21,6 +21,7 @@ const SORT_POSITIONS = [
 const SorterRow = ({ activeSorter, changeSorter }) => (
     <div className="filter-row">
         <div className="btn-group">
+            <p className="row__title">Sort by:</p>
             {SORT_POSITIONS.map(({ text, id }) => (
                 <button
                     onClick={() => { changeSorter(id) }}

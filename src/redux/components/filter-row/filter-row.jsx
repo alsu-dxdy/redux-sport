@@ -28,6 +28,7 @@ const FILTERS_BTN = [
 const FilterRow = ({ activeFilter, changeFilter }) => (
     <div className="filter-row">
         <div className="btn-group">
+            <p className="row__title">Filter by:</p>
             {FILTERS_BTN.map(({ text, id }) => (
                 <button
                     onClick={() => { changeFilter(id) }}

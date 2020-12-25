@@ -17,8 +17,6 @@ function Main(props) {
   const [inputTypeSport, setinputTypeSport] = useState('');
   const [inputKm, setInputKm] = useState('');
   const [inputComment, setInputComment] = useState('');
-  const [inputDateSort, setInputDateSort] = useState('');
-  const [inputKmSort, setInputKmSort] = useState('');
 
   function handleInputDateChange({ target: { value } }) {
     setInputDate(value);

@@ -14,33 +14,56 @@ const AddTaskForm = ({
     handleSelectChange,
     handleInputChange,
     handleTextAreaChange,
-    handleAdd }) => {
+    handleAdd,
+}) => {
 
-    // const { name, text, position, date } = showData;
     return (
         <form className="form__content">
             {/* Date */}<br />
             <label>
                 Date:
-            <input type="date" name="pubDate" value={inputDate} onChange={handleInputDateChange} />
+            <Field
+                    component="input"
+                    type="date"
+                    name="dateOfTask"
+                    value={inputDate}
+                    onChange={handleInputDateChange} />
             </label>
 
             {/* Select */}<br />
-            <select value={inputTypeSport} onChange={handleSelectChange}>
-                {POSITIONS.map(({ id, value, title }) => (
-                    <option key={id} value={value}>{title}</option>
-                ))}
-            </select>
+            <label>
+                Type of sport:
+            <Field
+                    component="select"
+                    name="typeOfTask"
+                    value={inputTypeSport}
+                    onChange={handleSelectChange}>
+                    {POSITIONS.map(({ id, value, title }) => (
+                        <option key={id} value={value}>{title}</option>
+                    ))}
+                </Field>
+            </label>
 
             {/* Input */}<br />
             <label>
-                km:
-            <input type="text" name="name" value={inputKm} onChange={handleInputChange} />
+                Distance, km:
+            <Field
+                    component="input"
+                    type="text"
+                    name="distanceOfTask"
+                    value={inputKm}
+                    onChange={handleInputChange} />
             </label>
 
             {/* Textarea */}<br />
-            <label htmlFor="text">Comments:</label>
-            <textarea id="text" value={inputComment} onChange={handleTextAreaChange} />
+            <label htmlFor="text">Comments:
+            <Field
+                    component="textarea"
+                    name="commentOfTask"
+                    value={inputComment}
+                    onChange={handleTextAreaChange}
+                    id="text" />
+            </label>
 
             {/* Button */} <br />
             <button onClick={handleAdd}>Add</button>

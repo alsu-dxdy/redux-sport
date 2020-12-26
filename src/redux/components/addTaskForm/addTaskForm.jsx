@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import { Field, reduxForm } from 'redux-form';
 
 import { POSITIONS } from '../../../constants';
 
@@ -47,4 +48,8 @@ const AddTaskForm = ({
     )
 }
 
-export default AddTaskForm;
+const AddTaskReduxForm = reduxForm({ form: 'addTask' })(AddTaskForm);
+
+
+
+export default AddTaskReduxForm;

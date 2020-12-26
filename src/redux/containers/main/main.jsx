@@ -2,7 +2,7 @@ import React, { useState, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { addTask, removeTask, changeFilter, changeSorter } from '../../actions/actionCreator';
 
-import AddTaskForm from '../../components/addTaskForm/addTaskForm';
+import AddTaskReduxForm from '../../components/addTaskForm/addTaskForm';
 import TableList from '../../components/table-list/table-list';
 import FilterRow from '../../components/filter-row/filter-row';
 import SorterRow from '../../components/sorter-row/sorter-row'
@@ -56,7 +56,7 @@ function Main(props) {
   /* AddTaskForm: название пропса и значение пропса названы одинаково*/
   return (
     <Fragment>
-      <AddTaskForm
+      <AddTaskReduxForm
         inputDate={inputDate}
         inputTypeSport={inputTypeSport}
         inputKm={inputKm}

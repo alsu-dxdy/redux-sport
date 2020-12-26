@@ -17,43 +17,33 @@ const AddTaskForm = ({
 
     // const { name, text, position, date } = showData;
     return (
-        <Fragment>
-            <form className="form__content">
-                {/* Date */}<br />
-                <label>
-                    Date:
+        <form className="form__content">
+            {/* Date */}<br />
+            <label>
+                Date:
             <input type="date" name="pubDate" value={inputDate} onChange={handleInputDateChange} />
-                </label>
+            </label>
 
-                {/* Select */}<br />
-                <select value={inputTypeSport} onChange={handleSelectChange}>
-                    {POSITIONS.map(({ id, value, title }) => (
-                        <option key={id} value={value}>{title}</option>
-                    ))}
-                </select>
+            {/* Select */}<br />
+            <select value={inputTypeSport} onChange={handleSelectChange}>
+                {POSITIONS.map(({ id, value, title }) => (
+                    <option key={id} value={value}>{title}</option>
+                ))}
+            </select>
 
-                {/* Input */}<br />
-                <label>
-                    km:
+            {/* Input */}<br />
+            <label>
+                km:
             <input type="text" name="name" value={inputKm} onChange={handleInputChange} />
-                </label>
+            </label>
 
-                {/* Textarea */}<br />
-                <label htmlFor="text">Comments:</label>
-                <textarea id="text" value={inputComment} onChange={handleTextAreaChange} />
+            {/* Textarea */}<br />
+            <label htmlFor="text">Comments:</label>
+            <textarea id="text" value={inputComment} onChange={handleTextAreaChange} />
 
-                {/* Button */} <br />
-                <button onClick={handleAdd}>Add</button>
-            </form>
-            {/* 
-            <h2>{name}</h2>
-            <h3>{text}</h3>
-            <h3>{position}</h3>
-            <h3>{date}</h3>
-            */}
-
-
-        </Fragment>
+            {/* Button */} <br />
+            <button onClick={handleAdd}>Add</button>
+        </form>
     )
 }
 

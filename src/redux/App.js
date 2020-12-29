@@ -1,13 +1,15 @@
-import React, { Fragment } from 'react';
-
+import React from 'react';
 import Main from './containers/main/main';
-import Title from './components/title/title';
+import Header from './components/header/Header';
+
+import './App.css';
+
 
 const App = () => (
-  <Fragment>
-    <Title title="Sport App" />
+  <div className="App">
+    <Header />
     <Main />
-  </Fragment>
+  </div>
 );
 
 export default App;

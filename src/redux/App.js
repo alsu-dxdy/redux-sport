@@ -1,8 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Header from './components/header/Header';
 import Main from './containers/main/main';
 import Tips from './components/tips/tips';
-import Header from './components/header/Header';
+import AboutUs from './components/about-us/AboutUs';
 
 import './App.css';
 
@@ -17,6 +18,9 @@ const App = () => (
         </Route>
         <Route path="/tips">
           <Tips />
+        </Route>
+        <Route path="/about-us">
+          <AboutUs />
         </Route>
       </Switch>
     </div>
